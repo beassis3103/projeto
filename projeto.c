@@ -42,12 +42,14 @@ int modo_arquivo(char *file){//bea
     int matriz[altura][largura];
     FILE *file;     
 
-    arqv = fopen(file[1], "r");
+    file = fopen(file[2], "r");
 
-    if(arqv == NULL){
+    if(file == NULL){
         printf("Erro ao abrir o arquivo. Arquivo vazio.");
         return 1;
     }
+
+    fscanf(file, "%d %d", &altura, &largura);
 
     for(int i = 0; i <= altura; i++){
         for(int j = 0; j <= largura; j++){
